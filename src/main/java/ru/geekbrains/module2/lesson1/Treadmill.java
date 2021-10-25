@@ -1,3 +1,5 @@
+package ru.geekbrains.module2.lesson1;
+
 public class Treadmill {
     private double runDistance;
 

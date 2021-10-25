@@ -1,17 +1,18 @@
-public class Cat {
+package ru.geekbrains.module2.lesson1;
 
-    private double limitJumpHeight;
+public class Robot {
     private double limitRunDistance;
+    private double limitJumpHeight;
 
-    Cat(double limitRunDistance, double limitJumpHeight) {
+    Robot(double limitRunDistance, double limitJumpHeight) {
         try {
             if (limitRunDistance <= 0 || limitJumpHeight <= 0) throw new IllegalArgumentException();
             this.limitRunDistance = limitRunDistance;
             this.limitJumpHeight = limitJumpHeight;
         } catch (IllegalArgumentException e) {
-            System.err.println("Illegal input arguments. By default run limit is set 100 and jump limit – 2");
-            this.limitRunDistance = 100;
-            this.limitJumpHeight = 2;
+            System.err.println("Illegal input arguments. By default run limit is set 500 and jump limit – 1");
+            this.limitRunDistance = 500;
+            this.limitJumpHeight = 1;
         }
     }
 
@@ -20,9 +21,9 @@ public class Cat {
             if (treadmill.getRunDistance() < 0) {
                 throw new IllegalArgumentException();
             } else if (treadmill.getRunDistance() <= limitRunDistance) {
-                System.out.println("На беговой дорожке кошка пробежала расстояние " + treadmill.getRunDistance() + "м");
+                System.out.println("На беговой дорожке робот пробежал расстояние " + treadmill.getRunDistance() + "м");
             } else {
-                System.out.println("На беговой дорожке кошка не смогла пробежать расстояние " + treadmill.getRunDistance() + "м");
+                System.out.println("На беговой дорожке робот не смог пробежать расстояние " + treadmill.getRunDistance() + "м");
             }
         } catch (IllegalArgumentException e) {
             System.err.println("Illegal input argument");
@@ -34,9 +35,9 @@ public class Cat {
             if (wall.getHeight() <= 0) {
                 throw new IllegalArgumentException();
             } else if (wall.getHeight() <= limitJumpHeight) {
-                System.out.println("Кошка смогла перепрыгнуть стену высотой " + wall.getHeight() + "м");
+                System.out.println("Робот смог перепрыгнуть стену высотой " + wall.getHeight() + "м");
             } else {
-                System.out.println("Кошка не смогла перепрыгнуть стену высотой " + wall.getHeight() + "м");
+                System.out.println("Робот не смог перепрыгнуть стену высотой " + wall.getHeight() + "м");
             }
         } catch (IllegalArgumentException e) {
             System.err.println("Illegal input argument");
@@ -45,6 +46,6 @@ public class Cat {
 
     @Override
     public String toString() {
-        return "1";
+        return "2";
     }
 }
