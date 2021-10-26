@@ -1,11 +1,11 @@
 package ru.geekbrains.module2.lesson1;
 
-public class Cat {
+public class Cat implements Competitor{
 
     private double limitJumpHeight;
     private double limitRunDistance;
 
-    Cat(double limitRunDistance, double limitJumpHeight) {
+    Cat(double limitRunDistance, double limitJumpHeight){
         if (limitRunDistance <= 0 || limitJumpHeight <= 0) {
             System.out.println("Illegal input arguments. By default run limit is set 100 and jump limit – 2");
             this.limitRunDistance = 100;
@@ -15,6 +15,7 @@ public class Cat {
         this.limitJumpHeight = limitJumpHeight;
     }
 
+    @Override
     public void run(Treadmill treadmill) {
         if (treadmill.getRunDistance() < 0) {
             System.out.println("Illegal input argument");
@@ -25,6 +26,7 @@ public class Cat {
         }
     }
 
+    @Override
     public void jump(Wall wall) {
         if (wall.getHeight() <= 0) {
             System.out.println("Illegal input argument");

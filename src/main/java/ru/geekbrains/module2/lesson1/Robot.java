@@ -1,6 +1,6 @@
 package ru.geekbrains.module2.lesson1;
 
-public class Robot {
+public class Robot implements Competitor{
     private double limitRunDistance;
     private double limitJumpHeight;
 
@@ -15,6 +15,7 @@ public class Robot {
 
     }
 
+    @Override
     public void run(Treadmill treadmill) {
         if (treadmill.getRunDistance() < 0) {
             System.out.println("Illegal input argument");
@@ -25,7 +26,7 @@ public class Robot {
         }
 
     }
-
+    @Override
     public void jump(Wall wall) {
             if (wall.getHeight() <= 0) {
                 System.out.println("Illegal input argument");
